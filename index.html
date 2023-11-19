@@ -77,23 +77,4 @@
         }
     });
 </script>
-<script>
-    document.addEventListener('DOMContentLoaded', (event) => {
-        const bgAudio = document.getElementById('bgAudio');
-        const bgVideo = document.getElementById('bgVideo');
-
-        // Function to detect iOS or Android
-        function isMobileDevice() {
-            return /Android|webOS|iPhone|iPad|iPod|BlackBerry|IEMobile|Opera Mini/i.test(navigator.userAgent);
-        }
-
-        if (isMobileDevice()) {
-            if (bgVideo) {
-                // bgVideo.style.display = 'none';
-                bgVideo.remove(); // Remove the video element entirely???
-            }
-        }
-
-    });
-</script>
 </html>
