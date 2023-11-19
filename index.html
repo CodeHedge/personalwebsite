@@ -19,13 +19,13 @@
     <div class="cursor-dot" data-cursor-dot></div>
     <div class="cursor-outline" data-cursor-outline></div>
     <div class="overlay" id="volumeWarning">
-        <h4 style="font-size: 12pt;">[VOLUME/FLASHING LIGHTS WARNING]</h4>
+        <h4 style="font-size: 12pt;">[VOLUME WARNING]</h4>
     </div>
     <div id="actualContent">
         <div id="particles-js"></div>
         <video loop style="display: none;" id="bgVideo" muted>
             <!--<source src="https://cdn.discordapp.com/attachments/1067540909736067123/1174507227567099965/Weval_-_Someday_Official_Video_720p_h264.mp4?ex=6567d818&is=65556318&hm=9d217f77fac33c2aca7cb3f31c5bda5a24314adc9c8adf119a9dc2a3b5150f42&" type="video/mp4">-->
-            <source src="https://cdn.discordapp.com/attachments/1175628596220543048/1175702939877253140/veil_-_91088_720p.mp4?ex=656c31b0&is=6559bcb0&hm=6d729f33b77a5320b35437e22086aae1038ce8fe41dc488099856ffe33a110bf&" type="video/mp4">
+            <source src="https://cdn.discordapp.com/attachments/1175628596220543048/1175705120785317969/abstract_background_-_107310_Original.mp4?ex=656c33b8&is=6559beb8&hm=a003e6515759445b2f6f81fe1ba0599459cd2754692d8ed8a8f43742d3cbd4a8&" type="video/mp4">
             Your browser does not support the video element.
         </video>
         <audio id="bgAudio" loop>
@@ -72,15 +72,14 @@
 <script src="cursor.js"></script>
 <script src="handleclick.js"></script>
 <script>
-    let audioPlayed = false; // Add a variable to track whether the audio has been played
-
+    let audioPlayed = false;
     document.addEventListener('DOMContentLoaded', (event) => {
         const bgAudio = document.getElementById('bgAudio');
         if (bgAudio) {
             document.body.addEventListener('click', function () {
                 if (!audioPlayed) {
                     bgAudio.play();
-                    audioPlayed = true; // Set the flag to true after playing
+                    audioPlayed = true;
                 }
             });
         }
