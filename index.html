@@ -77,18 +77,19 @@
     let audioPlayed = false;
     document.addEventListener('DOMContentLoaded', (event) => {
         const bgAudio = document.getElementById('bgAudio');
-        const volumeWarning = document.getElementById('volumeWarning'); // Declare the volumeWarning variable
+        const volumeWarning = document.getElementById('volumeWarning');
+        const body = document.body;
         if (bgAudio && volumeWarning) {
             document.body.addEventListener('click', function () {
                 if (!audioPlayed) {
                     bgAudio.play();
                     audioPlayed = true;
-                    // Hide the volumeWarning overlay
                     volumeWarning.style.display = 'none';
-                    body.style.backgroundImage = "url('https://i.imgur.com/YbmpmOc.gif')"; // Show the background image
+                    body.style.backgroundImage = "url('https://i.imgur.com/YbmpmOc.gif')";
                 }
             });
         }
     });
 </script>
+</body>
 </html>
