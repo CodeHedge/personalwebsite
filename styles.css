@@ -8,9 +8,10 @@
 body {
     margin: 0;
     padding: 0;
+    background-image: url('https://i.imgur.com/YbmpmOc.gif');
     background-size: cover;
-    background-position: center; 
-    background-repeat: no-repeat; 
+    background-position: center;
+    background-repeat: no-repeat;
     display: flex;
     justify-content: center;
     align-items: center;
