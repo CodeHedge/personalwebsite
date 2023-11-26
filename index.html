@@ -15,7 +15,7 @@
     <link rel="stylesheet" href="styles.css">
 </head>
 
-<body style="background-image: url('https://i.imgur.com/YbmpmOc.gif');">
+<body>
     <div class="cursor-dot" data-cursor-dot></div>
     <div class="cursor-outline" data-cursor-outline></div>
     <div class="overlay" id="volumeWarning">
@@ -77,13 +77,15 @@
     let audioPlayed = false;
     document.addEventListener('DOMContentLoaded', (event) => {
         const bgAudio = document.getElementById('bgAudio');
-        if (bgAudio) {
+        const volumeWarning = document.getElementById('volumeWarning'); // Declare the volumeWarning variable
+        if (bgAudio && volumeWarning) {
             document.body.addEventListener('click', function () {
                 if (!audioPlayed) {
                     bgAudio.play();
                     audioPlayed = true;
-                    if (volumeWarning) {
-                        volumeWarning.style.display = 'none';
+                    // Hide the volumeWarning overlay
+                    volumeWarning.style.display = 'none';
+                    body.style.backgroundImage = "url('https://i.imgur.com/YbmpmOc.gif')"; // Show the background image
                 }
             });
         }
