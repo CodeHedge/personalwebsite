@@ -82,6 +82,8 @@
                 if (!audioPlayed) {
                     bgAudio.play();
                     audioPlayed = true;
+                    if (volumeWarning) {
+                        volumeWarning.style.display = 'none';
                 }
             });
         }
