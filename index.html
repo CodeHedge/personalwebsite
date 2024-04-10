@@ -18,9 +18,9 @@
 <body>
     <div class="cursor-dot" data-cursor-dot></div>
     <div class="cursor-outline" data-cursor-outline></div>
-    <div class="overlay" id="volumeWarning">
+    <!--<div class="overlay" id="volumeWarning">
         <h4 style="font-size: 12pt;">[VOLUME WARNING]</h4>
-    </div>
+    </div>-->
     <div id="actualContent">
         <div id="particles-js"></div>
 
@@ -36,7 +36,7 @@
             <p class="greeting-rainbow">Hedge</p>
             <p class="details">
                 <b>he/him</b><br>
-                Im an engineer by trade, and I like to make things. Hobbies include programming, tinkering, and gaming.
+                Im sorry.
             </p>
             <a href="mailto:1hedge1@protonmail.com" class="pill">
                 <i class="fa-solid fa-envelope fa-lg"></i> <b>
@@ -77,7 +77,6 @@
     ];
     document.addEventListener('DOMContentLoaded', (event) => {
         const bgAudio = document.getElementById('bgAudio');
-        const volumeWarning = document.getElementById('volumeWarning');
         const body = document.body;
         function setRandomBackgroundImage() {
             const randomIndex = Math.floor(Math.random() * gifs.length);
@@ -89,7 +88,6 @@
                 if (!audioPlayed) {
                     bgAudio.play();
                     audioPlayed = true;
-                    volumeWarning.style.display = 'none';
                     setRandomBackgroundImage();
                 }
             });
