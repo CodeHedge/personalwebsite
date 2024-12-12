@@ -76,9 +76,7 @@
         "url('https://media0.giphy.com/media/v1.Y2lkPTc5MGI3NjExM3puMGozN3V5OWw1a29oNW95MXNqc3NjbDRqYjRtMW0zd3dlbGRmbyZlcD12MV9pbnRlcm5hbF9naWZfYnlfaWQmY3Q9Zw/CGTN1SVEwIThC/giphy.webp')",
         "url('https://media4.giphy.com/media/v1.Y2lkPTc5MGI3NjExb3A2eWxyeDRvdXRnem1jaWNlMHZwZGJuMWJld2g5OHliZG81aDhiZCZlcD12MV9pbnRlcm5hbF9naWZfYnlfaWQmY3Q9Zw/cInsDfTTM8Hlu/giphy.webp')"
     ];
-    bgAudio.play();
-    audioPlayed = true;
-    volumeWarning.style.display = 'none';
+    
     document.addEventListener('DOMContentLoaded', (event) => {
         const bgAudio = document.getElementById('bgAudio');
         const volumeWarning = document.getElementById('volumeWarning');
@@ -90,19 +88,17 @@
             body.style.backgroundImage = gifs[currentGifIndex];
             currentGifIndex = (currentGifIndex + 1) % gifs.length;
         }
-        rotateGifs();
-        setInterval(rotateGifs, 5000);
 
         if (bgAudio && volumeWarning) {
             document.body.addEventListener('click', function () {
                 if (!audioPlayed) {
-                    //bgAudio.play();
-                    //audioPlayed = true;
+                    bgAudio.play();
+                    audioPlayed = true;
                     volumeWarning.style.display = 'none';
                     
                     // Start the GIF rotation
-                    //rotateGifs();
-                    //setInterval(rotateGifs, 5000);
+                    rotateGifs();
+                    setInterval(rotateGifs, 5000);
                 }
             });
         }
