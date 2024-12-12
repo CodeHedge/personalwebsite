@@ -38,16 +38,10 @@
                 <b>he/him</b><br>
                 And I like to make things!
             </p>
-            <a href="mailto:1hedge1@protonmail.com" class="pill">
+            <a href="mailto:trenthancock123@gmail.com" class="pill">
                 <i class="fa-solid fa-envelope fa-lg"></i> <b>
                     Contact
                     Me
-                </b>
-            </a>
-            <!--add a -->
-            <a href="https://biscuitshop.us" class="pill" style="margin-top: 10px;">
-                <i class="fa-solid fa-store fa-lg"></i> <b>
-                    My Shop
                 </b>
             </a>
             <div class="bottom-container">
@@ -60,9 +54,6 @@
                     </a>
                     <a href="https://steamcommunity.com/profiles/76561197979713029/" class="icon-circle" target="_blank">
                         <i class="fa-brands fa-steam fa-lg"></i>
-                    </a>
-                    <a href="https://patreon.com/Hedge729" class="icon-circle" target="_blank">
-                        <i class="fa-solid fa-hand-holding-dollar fa-lg"></i>
                     </a>
 
                 </div>
@@ -81,22 +72,29 @@
         "url('https://media3.giphy.com/media/3ohs4oQe6t43f6ZBS0/giphy.gif?cid=ecf05e47bnh31mnvufgaxxjjuufx0tprj20h40zai3g2x3xq&ep=v1_gifs_related&rid=giphy.gif&ct=g')",
         "url('https://media3.giphy.com/media/TQmCzpo9oqniU/giphy.gif?cid=ecf05e47bnh31mnvufgaxxjjuufx0tprj20h40zai3g2x3xq&ep=v1_gifs_related&rid=giphy.gif&ct=g')",
     ];
+    
     document.addEventListener('DOMContentLoaded', (event) => {
         const bgAudio = document.getElementById('bgAudio');
         const volumeWarning = document.getElementById('volumeWarning');
         const body = document.body;
-        function setRandomBackgroundImage() {
-            const randomIndex = Math.floor(Math.random() * gifs.length);
-            body.style.backgroundImage = gifs[randomIndex];
-        }
         
+        let currentGifIndex = 0;
+        
+        function rotateGifs() {
+            body.style.backgroundImage = gifs[currentGifIndex];
+            currentGifIndex = (currentGifIndex + 1) % gifs.length;
+        }
+
         if (bgAudio && volumeWarning) {
             document.body.addEventListener('click', function () {
                 if (!audioPlayed) {
                     bgAudio.play();
                     audioPlayed = true;
                     volumeWarning.style.display = 'none';
-                    setRandomBackgroundImage();
+                    
+                    // Start the GIF rotation
+                    rotateGifs();
+                    setInterval(rotateGifs, 5000);
                 }
             });
         }
