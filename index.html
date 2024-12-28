@@ -18,9 +18,10 @@
 <body>
     <div class="cursor-dot" data-cursor-dot></div>
     <div class="cursor-outline" data-cursor-outline></div>
-    <div class="overlay" id="volumeWarning">
+    <!--<div class="overlay" id="volumeWarning">
         <h4 style="font-size: 12pt;">[VOLUME WARNING]</h4>
     </div>
+    -->
     <div id="actualContent">
         <div id="particles-js"></div>
 
@@ -38,7 +39,7 @@
                 <b>he/him</b><br>
                 And I like to make things! I recently started a youtube channel where i make build guides for devices I find cool. 
             </p>
-            <a href="mailto:trenthancock123@gmail.com" class="pill">
+            <a href="mailto:hedge@edgeofhedge.com" class="pill">
                 <i class="fa-solid fa-envelope fa-lg"></i> <b>
                     Contact
                     Me
@@ -70,7 +71,7 @@
 <script src="particles.js"></script>
 <script src="app-particles.js"></script>
 <script src="cursor.js"></script>
-<script src="handleclick.js"></script>
+<!--<script src="handleclick.js"></script>-->
 <script>
     let audioPlayed = false;
     let gifs = [
@@ -85,8 +86,8 @@
     
     document.addEventListener('DOMContentLoaded', (event) => {
         const bgAudio = document.getElementById('bgAudio');
-        const volumeWarning = document.getElementById('volumeWarning');
         const body = document.body;
+        const actualContent = document.getElementById('actualContent');
         
         let currentGifIndex = 0;
         
@@ -95,18 +96,19 @@
             currentGifIndex = (currentGifIndex + 1) % gifs.length;
         }
 
-        if (bgAudio && volumeWarning) {
-            document.body.addEventListener('click', function () {
-                if (!audioPlayed) {
-                    bgAudio.play();
-                    audioPlayed = true;
-                    volumeWarning.style.display = 'none';
-                    
-                    // Start the GIF rotation
-                    rotateGifs();
-                    setInterval(rotateGifs, 5000);
-                }
-            });
+        if (bgAudio) {
+            bgAudio.play();
+            audioPlayed = true;
+            
+            // Start the GIF rotation
+            rotateGifs();
+            setInterval(rotateGifs, 5000);
+        }
+
+        // Ensure actualContent is visible
+        if (actualContent) {
+            actualContent.style.display = 'block';
+            actualContent.style.opacity = '1';
         }
     });
 </script>
