@@ -18,17 +18,23 @@
 <body>
     <div class="cursor-dot" data-cursor-dot></div>
     <div class="cursor-outline" data-cursor-outline></div>
-    <!--<div class="overlay" id="volumeWarning">
-        <h4 style="font-size: 12pt;">[VOLUME WARNING]</h4>
+
+
+    <div class="container tab-bar">
+        <a href="/" class="tab">Home</a>
+        <a href="/countdown" class="tab">Test</a>
     </div>
-    -->
+    
     <div id="actualContent">
         <div id="particles-js"></div>
+
+        
 
         <audio id="bgAudio" loop>
             <source src="https://cdn.edgeofhedge.com/Flume_Nice_2_know_u.mp3" type="audio/mpeg">
             Your browser does not support the audio element.
         </audio>
+        
         <div class="container">
             <div class="avatar-container">
                 <img src="https://github.com/CodeHedge.png" alt="Avatar" class="avatar">
@@ -71,7 +77,6 @@
 <script src="particles.js"></script>
 <script src="app-particles.js"></script>
 <script src="cursor.js"></script>
-<!--<script src="handleclick.js"></script>-->
 <script>
     let audioPlayed = false;
     let gifs = [
