@@ -138,7 +138,7 @@ body {
     margin: 0;
     margin-bottom: 10px;
     font-family: 'Nunito', sans-serif;
-    background: linear-gradient(to right, #6666ff, #0099ff , #00ff00, #ff3399, #6666ff);
+    background: linear-gradient(to right, #FFD700, #FFA500, #FFD700);
     -webkit-background-clip: text;
     background-clip: text;
     color: transparent;
@@ -241,19 +241,16 @@ body {
 
 @keyframes borderRotate {
     0% {
-        border: 2px solid rgb(250, 88, 128);
+        border: 2px solid #FFD700;
     }
-    25% {
-        border: 2px solid rgb(0, 153, 255);
+    33% {
+        border: 2px solid #FFA500;
     }
-    50% {
-        border: 2px solid rgb(0, 255, 0);
-    }
-    75% {
-        border: 2px solid rgb(255, 51, 153);
+    66% {
+        border: 2px solid #FFD700;
     }
     100% {
-        border: 2px solid rgb(250, 88, 128);
+        border: 2px solid #FFA500;
     }
 }
 
