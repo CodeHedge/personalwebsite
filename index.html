@@ -22,7 +22,7 @@
 
     <div class="container tab-bar">
         <a href="/" class="tab">Home</a>
-        <a href="/countdown" class="tab">Test</a>
+        <a href="/countdown" class="tab">Countdown</a>
     </div>
     
     <div id="actualContent">
@@ -72,7 +72,12 @@
                 </div>
             </div>
         </div>
+    <div class="audio-control-container">
+        <button id="audioToggle" class="audio-toggle">
+            <i class="fa-solid fa-volume-mute"></i>
+        </button>
     </div>
+        
 </body>
 <script src="particles.js"></script>
 <script src="app-particles.js"></script>
@@ -114,6 +119,28 @@
         if (actualContent) {
             actualContent.style.display = 'block';
             actualContent.style.opacity = '1';
+        }
+    });
+</script>
+<script>
+    document.addEventListener('DOMContentLoaded', (event) => {
+        const bgAudio = document.getElementById('bgAudio');
+        const audioToggle = document.getElementById('audioToggle');
+        let isPlaying = false; // Track the audio state
+
+        if (bgAudio) {
+            bgAudio.pause(); // Pause the audio by default
+
+            audioToggle.addEventListener('click', () => {
+                if (isPlaying) {
+                    bgAudio.pause();
+                    audioToggle.innerHTML = '<i class="fa-solid fa-volume-mute"></i>';
+                } else {
+                    bgAudio.play();
+                    audioToggle.innerHTML = '<i class="fa-solid fa-volume-up"></i>';
+                }
+                isPlaying = !isPlaying; // Toggle the audio state
+            });
         }
     });
 </script>

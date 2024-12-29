@@ -312,3 +312,45 @@ body {
         gap: 3px;
     }
 }
+
+/* Audio Control Container */
+.audio-control-container {
+    width: 100%;
+    text-align: center;
+    margin-top: 20px;
+    position: fixed;
+    bottom: 20px;
+    z-index: 10;
+}
+
+/* Audio Toggle Button */
+.audio-toggle {
+    width: 60px;
+    height: 60px;
+    border: none;
+    border-radius: 50%;
+    background-color: rgba(42, 46, 53, 0.8);
+    color: #E3E3E3;
+    font-size: 24px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    box-shadow: 0px 0px 20px 0px rgba(0,0,0,1.5);
+    cursor: none;
+    transition: background-color 0.3s, transform 0.2s;
+    outline: none;
+}
+
+.audio-toggle:hover {
+    background-color: #5b5d64;
+    transform: scale(1.1);
+    cursor: none;
+}
+
+.audio-toggle i {
+    transition: color 0.3s;
+}
+
+.audio-toggle.active i {
+    color: #00ff00; /* Icon color for active state */
+}
