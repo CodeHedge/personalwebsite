@@ -316,6 +316,23 @@ body {
     .icon-container {
         gap: 3px;
     }
+
+    .tab-bar {
+        flex-direction: row; /* Ensure tabs stay in a row */
+        justify-content: space-between; /* Distribute space evenly between left and right sections */
+        align-items: center; /* Center vertically */
+    }
+
+    .tab-left, .tab-right {
+        display: flex; /* Ensure proper layout on smaller screens */
+        align-items: center; /* Center vertically */
+    }
+
+    .tab {
+        font-size: 14px; /* Reduce font size for smaller screens */
+        padding: 8px 15px; /* Adjust padding for better fit */
+        margin: 0 5px; /* Reduce margin for better spacing */
+    }
 }
 
 /* Audio Control Container */
