@@ -260,25 +260,32 @@ body {
     }
 }
 
-/* Add styles for the tab bar */
 .tab-bar {
     position: fixed;
     top: 0;
     margin-top: 10px;
     width: 90%;
     display: flex;
-    justify-content: left;
-    align-items: left;
+    justify-content: space-between; /* Ensure left and right sections are spaced */
+    align-items: center; /* Center contents vertically */
     background-color: rgba(42, 46, 53, 0.8);
-    padding: 10px 0;
-    box-shadow: 0px 0px 20px 0px rgba(0,0,0,1.5);
+    padding: 10px 20px;
+    box-shadow: 0px 0px 20px 0px rgba(0, 0, 0, 1.5);
     backdrop-filter: blur(8px);
     z-index: 1000;
     flex-direction: row;
-    
 }
 
-/* Add styles for the tabs */
+.tab-left, .tab-right {
+    display: flex;
+    align-items: center; /* Vertically center the tabs within their containers */
+    gap: 10px; /* Spacing between tabs */
+}
+
+.tab-right {
+    justify-content: flex-end; /* Align the right container to the far right */
+}
+
 .tab {
     color: #E3E3E3;
     text-decoration: none;
@@ -293,6 +300,7 @@ body {
     background-color: #5b5d64;
     cursor: none;
 }
+
 
 /* Adjust body padding to account for fixed tab bar */
 body {

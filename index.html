@@ -16,12 +16,22 @@
 </head>
 
 <body>
+
     <div class="cursor-dot" data-cursor-dot></div>
     <div class="cursor-outline" data-cursor-outline></div>
 
     <div class="container tab-bar">
-        <a href="/" class="tab">Home</a>
-        <a href="/countdown" class="tab">Countdown</a>
+        <!-- Left Container -->
+        <div class="left-container">
+            <a href="/" class="tab">Home</a>
+            <a href="/countdown" class="tab">Countdown</a>
+        </div>
+        <!-- Right Container -->
+        <div class="right-container">
+            <button id="audioToggle" class="audio-toggle">
+                <i class="fa-solid fa-volume-mute"></i>
+            </button>
+        </div>
     </div>
 
     <div id="actualContent">
@@ -67,11 +77,6 @@
                     </a>
                 </div>
             </div>
-        </div>
-        <div class="audio-control-container">
-            <button id="audioToggle" class="audio-toggle">
-                <i class="fa-solid fa-volume-mute"></i>
-            </button>
         </div>
     </div>
 </body>
