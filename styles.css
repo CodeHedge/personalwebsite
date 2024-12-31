@@ -67,10 +67,44 @@ body {
 
 #actualContent {
   opacity: 0;
+  margin-top: 10px;
 }
 
 /* BOX 1*/
 .container {
+    width: 22rem;
+    height: auto;
+    background-color: rgba(42, 46, 53, 0.8);
+    border-radius: 50px;
+    display: flex;
+    flex-direction: column;
+    position: relative;
+    box-shadow: 0px 0px 20px 0px rgba(0,0,0,1.5);
+    animation: borderRotate 5s linear 0s infinite;
+    padding: 30px;
+    transition: 200ms linear; 
+    backdrop-filter: blur(8px);
+    z-index: 2;
+}
+
+/* BOX 1*/
+.container {
+    width: 22rem;
+    height: auto;
+    background-color: rgba(42, 46, 53, 0.8);
+    border-radius: 50px;
+    display: flex;
+    flex-direction: column;
+    position: relative;
+    box-shadow: 0px 0px 20px 0px rgba(0,0,0,1.5);
+    animation: borderRotate 5s linear 0s infinite;
+    padding: 30px;
+    transition: 200ms linear; 
+    backdrop-filter: blur(8px);
+    z-index: 2;
+}
+
+.maincontainer {
     width: 22rem;
     height: auto;
     background-color: rgba(42, 46, 53, 0.8);
@@ -304,7 +338,7 @@ body {
 
 /* Adjust body padding to account for fixed tab bar */
 body {
-    padding-top: 60px; /* Adjust this value if needed */
+    padding-top: 20px; /* Adjust this value if needed */
 }
 
 /* (PHONE VERSION) */
@@ -312,6 +346,12 @@ body {
     .container {
         width: 280px;
         margin: 10px;
+    }
+
+    .maincontainer {
+        width: 280px;
+        margin: 10px;
+        margin-top: -200px;
     }
     .icon-container {
         gap: 3px;
@@ -332,6 +372,11 @@ body {
         font-size: 14px; /* Reduce font size for smaller screens */
         padding: 8px 15px; /* Adjust padding for better fit */
         margin: 0 5px; /* Reduce margin for better spacing */
+    }
+
+    #actualContent {
+        opacity: 0;
+        margin-top: 10px;
     }
 }
 
