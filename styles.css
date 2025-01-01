@@ -419,5 +419,5 @@ body {
 }
 
 .audio-toggle.active i {
-    color: #00ff00; /* Icon color for active state */
+    color: #00ff00; 
 }
