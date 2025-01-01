@@ -338,11 +338,15 @@ body {
 
 /* Adjust body padding to account for fixed tab bar */
 body {
-    padding-top: 20px; /* Adjust this value if needed */
+    padding-top: 60px; /* Adjust this value if needed */
 }
 
 /* (PHONE VERSION) */
 @media (max-width: 768px) {
+
+    .body {
+        padding-top: 60px;
+    }
     .container {
         width: 280px;
         margin: 10px;
@@ -376,7 +380,7 @@ body {
 
     #actualContent {
         opacity: 0;
-        margin-top: 10px;
+        margin-top: 60px;
     }
 }
 
