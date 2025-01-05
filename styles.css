@@ -8,7 +8,7 @@
 body {
     margin: 0;
     padding: 0;
-    background-image: url('https://i.imgur.com/YbmpmOc.gif');
+    background-image: url('https://media1.giphy.com/media/v1.Y2lkPTc5MGI3NjExb2d3cDV2NXMybHFwdTVoMGUxNm0zYTc4ZGx2bTJsaDFxY251YmZ3aiZlcD12MV9pbnRlcm5hbF9naWZfYnlfaWQmY3Q9Zw/3ov9jEnypymbFQJ9CM/giphy.gif');
     background-size: cover;
     background-position: center;
     background-repeat: no-repeat;
@@ -31,14 +31,14 @@ body {
 }
 
 .cursor-dot {
-    width: 25px;
-    height: 25px;
+    width: 15px;
+    height: 15px;
     backdrop-filter: blur(2px);
 }
 
 .cursor-outline {
-    width: 25px;
-    height: 25px;
+    width: 15px;
+    height: 15px;
     border: 2px solid hsla(0, 0%, 100%, 0.5);
 }
 
@@ -306,7 +306,7 @@ body {
     padding: 10px 20px;
     box-shadow: 0px 0px 20px 0px rgba(0, 0, 0, 1.5);
     backdrop-filter: blur(8px);
-    z-index: 1000;
+    z-index: 2;
     flex-direction: row;
 }
 
