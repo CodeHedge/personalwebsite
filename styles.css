@@ -107,6 +107,7 @@ body {
 .maincontainer {
     width: 22rem;
     height: auto;
+    transition: transform .4s;
     background-color: rgba(42, 46, 53, 0.8);
     border-radius: 50px;
     display: flex;
@@ -119,6 +120,10 @@ body {
     backdrop-filter: blur(8px);
     z-index: 2;
 }
+
+.maincontainer:hover {
+    transform: scale(103%);
+  }
 
 .site-made-by {
     position: fixed;
@@ -308,7 +313,13 @@ body {
     backdrop-filter: blur(8px);
     z-index: 2;
     flex-direction: row;
+    transition: transform 0.2s;
 }
+
+.tab-bar:hover {
+    transform: scale(103%);
+  }
+
 
 .tab-left, .tab-right {
     display: flex;
