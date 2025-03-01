@@ -166,7 +166,7 @@ body {
     font-size: 40px;
     margin: 0;
     margin-bottom: 10px;
-    font-family: 'Nunito', sans-serif;
+    font-family: 'JetBrains Mono', monospace;
     font-weight: 700;
 }
 
@@ -176,8 +176,8 @@ body {
     font-size: 40px;
     margin: 0;
     margin-bottom: 10px;
-    font-family: 'Nunito', sans-serif;
-    background: linear-gradient(to right, #FFD700, #FFA500, #FFD700);
+    font-family: "Grape Nuts", cursive;
+    background: linear-gradient(to right,#59dee4, #0084ff, #FFA500, #ff8000);
     -webkit-background-clip: text;
     background-clip: text;
     color: transparent;
