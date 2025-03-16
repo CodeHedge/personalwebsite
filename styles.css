@@ -176,7 +176,7 @@ body {
     font-size: 40px;
     margin: 0;
     margin-bottom: 10px;
-    font-family: "Grape Nuts", cursive;
+    font-family: 'JetBrains Mono', monospace;
     background: linear-gradient(to right,#59dee4, #0084ff, #FFA500, #ff8000);
     -webkit-background-clip: text;
     background-clip: text;
