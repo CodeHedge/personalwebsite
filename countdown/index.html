@@ -42,14 +42,84 @@
         // Display the result in the element with id="countdown"
         document.getElementById("countdown").innerHTML = days + " days " + hours + " hours " + minutes + " minutes " + seconds + " seconds"
 
-        // If the countdown is over, write some text and run app.js
+        // If the countdown is over, show play button
         if (distance < 0) {
             clearInterval(x);
-            document.getElementById("countdown").innerHTML = "HAPPY BIRTHDAY Hedge";
-            // Run app.js here
-            var script = document.createElement('script');
-            script.src = "app.js";
-            document.head.appendChild(script);
+            
+            // Create play button
+            var playButton = document.createElement('button');
+            playButton.innerHTML = '?';
+            playButton.style.cssText = `
+                font-size: 4rem;
+                width: 120px;
+                height: 120px;
+                background: rgba(255, 255, 255, 0.15);
+                border: 4px solid white;
+                border-radius: 50%;
+                color: white;
+                cursor: pointer;
+                transition: all 0.3s ease;
+                font-family: 'Roboto', sans-serif;
+                font-weight: bold;
+                position: relative;
+                z-index: 100;
+                pointer-events: auto;
+                display: flex;
+                align-items: center;
+                justify-content: center;
+                box-shadow: 0 0 30px rgba(255, 255, 255, 0.3);
+            `;
+            
+            // Hover effects
+            playButton.addEventListener('mouseenter', function() {
+                this.style.transform = 'scale(1.1)';
+                this.style.background = 'rgba(255, 255, 255, 0.2)';
+            });
+            
+            playButton.addEventListener('mouseleave', function() {
+                this.style.transform = 'scale(1)';
+                this.style.background = 'rgba(255, 255, 255, 0.1)';
+            });
+            
+            // Create video element (hidden initially)
+            var video = document.createElement('video');
+            video.src = "../assets/HedgeEvolve - SD 480p.mov";
+            video.controls = true;
+            video.style.cssText = `
+                width: 80vw;
+                height: 70vh;
+                max-width: none;
+                border-radius: 10px;
+                box-shadow: 0 0 20px rgba(255, 105, 180, 0.5);
+                display: none;
+                object-fit: contain;
+            `;
+            
+            // Clear countdown and add play button
+            document.getElementById("countdown").innerHTML = "";
+            document.getElementById("countdown").appendChild(playButton);
+            document.getElementById("countdown").appendChild(video);
+            
+            // Play button click handler
+            playButton.addEventListener('click', function() {
+                // Hide play button
+                this.style.display = 'none';
+                
+                // Show and play video
+                video.style.display = 'block';
+                video.play();
+                
+                // Add event listener to trigger confetti at 21 seconds
+                video.addEventListener('timeupdate', function() {
+                    if (video.currentTime >= 21 && !window.confettiTriggered) {
+                        window.confettiTriggered = true;
+                        // Run app.js for confetti
+                        var script = document.createElement('script');
+                        script.src = "app.js";
+                        document.head.appendChild(script);
+                    }
+                });
+            });
         }
     }, 1000);
 </script>
