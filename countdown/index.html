@@ -42,84 +42,41 @@
         // Display the result in the element with id="countdown"
         document.getElementById("countdown").innerHTML = days + " days " + hours + " hours " + minutes + " minutes " + seconds + " seconds"
 
-        // If the countdown is over, show play button
+        // If the countdown is over, show birthday message and confetti
         if (distance < 0) {
             clearInterval(x);
             
-            // Create play button
-            var playButton = document.createElement('button');
-            playButton.innerHTML = '?';
-            playButton.style.cssText = `
+            // Create birthday message
+            var birthdayMessage = document.createElement('div');
+            birthdayMessage.innerHTML = 'Happy birthday Hedge!';
+            birthdayMessage.style.cssText = `
                 font-size: 4rem;
-                width: 120px;
-                height: 120px;
-                background: rgba(255, 255, 255, 0.15);
-                border: 4px solid white;
-                border-radius: 50%;
                 color: white;
-                cursor: pointer;
-                transition: all 0.3s ease;
+                text-align: center;
                 font-family: 'Roboto', sans-serif;
                 font-weight: bold;
-                position: relative;
-                z-index: 100;
-                pointer-events: auto;
-                display: flex;
-                align-items: center;
-                justify-content: center;
-                box-shadow: 0 0 30px rgba(255, 255, 255, 0.3);
+                text-shadow: 0 0 20px rgba(255, 105, 180, 0.8);
+                animation: glow 2s ease-in-out infinite alternate;
             `;
             
-            // Hover effects
-            playButton.addEventListener('mouseenter', function() {
-                this.style.transform = 'scale(1.1)';
-                this.style.background = 'rgba(255, 255, 255, 0.2)';
-            });
-            
-            playButton.addEventListener('mouseleave', function() {
-                this.style.transform = 'scale(1)';
-                this.style.background = 'rgba(255, 255, 255, 0.1)';
-            });
-            
-            // Create video element (hidden initially)
-            var video = document.createElement('video');
-            video.src = "../assets/HedgeEvolve - SD 480p.mov";
-            video.controls = true;
-            video.style.cssText = `
-                width: 80vw;
-                height: 70vh;
-                max-width: none;
-                border-radius: 10px;
-                box-shadow: 0 0 20px rgba(255, 105, 180, 0.5);
-                display: none;
-                object-fit: contain;
+            // Add glow animation
+            var style = document.createElement('style');
+            style.textContent = `
+                @keyframes glow {
+                    from { text-shadow: 0 0 20px rgba(255, 105, 180, 0.8); }
+                    to { text-shadow: 0 0 30px rgba(255, 105, 180, 1), 0 0 40px rgba(255, 105, 180, 0.6); }
+                }
             `;
+            document.head.appendChild(style);
             
-            // Clear countdown and add play button
+            // Clear countdown and add birthday message
             document.getElementById("countdown").innerHTML = "";
-            document.getElementById("countdown").appendChild(playButton);
-            document.getElementById("countdown").appendChild(video);
+            document.getElementById("countdown").appendChild(birthdayMessage);
             
-            // Play button click handler
-            playButton.addEventListener('click', function() {
-                // Hide play button
-                this.style.display = 'none';
-                
-                // Show and play video
-                video.style.display = 'block';
-                video.play();
-                
-                // Add event listener to trigger confetti at 21 seconds
-                video.addEventListener('timeupdate', function() {
-                    if (video.currentTime >= 21 && !window.confettiTriggered) {
-                        window.confettiTriggered = true;
-                        // Run app.js for confetti
-                        var script = document.createElement('script');
-                        script.src = "app.js";
-                        document.head.appendChild(script);
-                    }
-                });
-            });
+            // Run app.js for confetti immediately
+            var script = document.createElement('script');
+            script.src = "app.js";
+            document.head.appendChild(script);
         }
     }, 1000);
 </script>
