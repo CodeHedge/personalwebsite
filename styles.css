@@ -177,7 +177,7 @@ body {
     margin: 0;
     margin-bottom: 10px;
     font-family: 'JetBrains Mono', monospace;
-    background: linear-gradient(to right,#59dee4, #0084ff, #FFA500, #ff8000);
+    background: linear-gradient(to right,#fd0101, #690000, #945b5b, #ffffff);
     -webkit-background-clip: text;
     background-clip: text;
     color: transparent;
@@ -280,16 +280,16 @@ body {
 
 @keyframes borderRotate {
     0% {
-        border: 2px solid #FFD700;
+        border: 2px solid #ffffff;
     }
     33% {
-        border: 2px solid #FFA500;
+        border: 2px solid #ff0000;
     }
     66% {
-        border: 2px solid #FFD700;
+        border: 2px solid #5c0101;
     }
     100% {
-        border: 2px solid #FFA500;
+        border: 2px solid #ff6060;
     }
 }
 
